@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 function App() {
   const handleShare = useCallback(async () => {
     const filesArray = ['src/assets/test.mp4'];
+    Object.freeze(filesArray);
 
     if (navigator.canShare && navigator.canShare({ files: filesArray })) {
       navigator
