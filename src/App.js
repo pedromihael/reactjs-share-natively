@@ -2,9 +2,9 @@ import { useCallback } from 'react';
 
 function App() {
   const handleShare = useCallback(async () => {
-    // const metadata = { type: 'video/mp4' };
+    const metadata = { type: 'video/mp4' };
     const files_input = document.querySelector('#files');
-    const file = new File([files_input.files], 'test.mp4');
+    const file = new File([files_input.files], 'test.mp4', metadata);
     const filesArray = [file];
 
     if (navigator.canShare && navigator.canShare({ files: filesArray })) {
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-      <p>1</p>
+      <p>2</p>
       <input id='files' type='file' />
       <button onClick={handleShare}>share</button>
       <p className='result'></p>
