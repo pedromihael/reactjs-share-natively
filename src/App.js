@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-      <p>3</p>
+      <p>4</p>
       {/* <input id='files' type='file' /> */}
       <button onClick={handleShare}>share</button>
       <p className='result'></p>
