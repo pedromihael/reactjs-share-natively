@@ -5,7 +5,6 @@ function App() {
     const metadata = { type: 'video/mp4' };
     const file = new File(['src/assets/test.mp4'], 'test.mp4', metadata);
     const filesArray = [file];
-    Object.freeze(filesArray);
 
     const files_input = document.querySelector('#files');
     console.log(files_input.files);
