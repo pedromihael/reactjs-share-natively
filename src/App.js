@@ -5,10 +5,13 @@ function App() {
     // const metadata = { type: 'video/mp4' };
     // const files_input = document.querySelector('#files');
 
-    const fileFetch = await fetch('./assets/test.mp4');
+    const fileFetch = await fetch('http://localhost:3000/test.mp4');
     const blob = await fileFetch.blob();
     const file = new File([blob], 'test.mp4', { type: 'video/mp4' });
     const filesArray = [file];
+
+    console.log(blob);
+    console.log(file);
 
     if (navigator.canShare && navigator.canShare({ files: filesArray })) {
       navigator
@@ -26,7 +29,7 @@ function App() {
 
   return (
     <>
-      <p>4</p>
+      <p>5</p>
       {/* <input id='files' type='file' /> */}
       <button onClick={handleShare}>share</button>
       <p className='result'></p>
