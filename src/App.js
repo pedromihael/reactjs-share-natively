@@ -23,10 +23,14 @@ function App() {
   }, []);
 
   const handleShareMany = useCallback(async () => {
-    const fileFetch = await fetch('/test-2.mp4');
-    const blob = await fileFetch.blob();
-    const file = new File([blob], 'test-2.mp4', { type: 'video/mp4' });
-    const filesArray = [file];
+    const fileFetch1 = await fetch('/test.mp4');
+    const blob1 = await fileFetch1.blob();
+    const file1 = new File([blob1], 'test.mp4', { type: 'video/mp4' });
+
+    const fileFetch2 = await fetch('/test-2.mp4');
+    const blob2 = await fileFetch2.blob();
+    const file2 = new File([blob2], 'test-2.mp4', { type: 'video/mp4' });
+    const filesArray = [file1, file2];
 
     if (navigator.canShare && navigator.canShare({ files: filesArray })) {
       navigator
