@@ -2,9 +2,13 @@ import { useCallback } from 'react';
 
 function App() {
   const handleShare = useCallback(async () => {
-    const file = new File(['/src/assets/test.mp4'], 'test.mp4');
+    const metadata = { type: 'video/mp4' };
+    const file = new File(['src/assets/test.mp4'], 'test.mp4', metadata);
     const filesArray = [file];
     Object.freeze(filesArray);
+
+    const files_input = document.querySelector('#files');
+    console.log(files_input.files);
 
     console.log([file], 'test.mp4');
 
@@ -24,6 +28,7 @@ function App() {
 
   return (
     <>
+      <input id='files' type='file' />
       <button onClick={handleShare}>share</button>
       <p className='result'></p>
     </>
