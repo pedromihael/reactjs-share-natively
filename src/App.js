@@ -2,8 +2,7 @@ import { useCallback } from 'react';
 
 function App() {
   const handleShare = useCallback(async () => {
-    const metadata = { type: 'video/mp4' };
-    const file = new File(['src/assets/test.mp4'], 'test.mp4', metadata);
+    const file = new File(['/src/assets/test.mp4'], 'test.mp4');
     const filesArray = [file];
     Object.freeze(filesArray);
 
