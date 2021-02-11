@@ -58,6 +58,12 @@ function App() {
       </video>
       <button onClick={handleShareOne}>SHARE ONE</button>
       <button onClick={handleShareMany}>SHARE MANY</button>
+      <a href='whatsapp://send?text=testando' data-action='share/whatsapp/share'>
+        Share via Whatsapp using protocol schema
+      </a>
+      <a href='https://wa.me/?text=testando' data-action='share/whatsapp/share'>
+        Share via Whatsapp using tcp/ip
+      </a>
     </Container>
   );
 }
