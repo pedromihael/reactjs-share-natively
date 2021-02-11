@@ -6,7 +6,7 @@ function App() {
     // const files_input = document.querySelector('#files');
 
     const fileFetch = await fetch('./assets/test.mp4');
-    const blob = fileFetch.blob();
+    const blob = await fileFetch.blob();
     const file = new File([blob], 'test.mp4', { type: 'video/mp4' });
     const filesArray = [file];
 
